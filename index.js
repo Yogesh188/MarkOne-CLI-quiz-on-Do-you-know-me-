@@ -30,7 +30,7 @@ function play(question,answer){
 
   var userAnswer=readlineSync.question(question);
 
-  if (userAnswer===answer){
+  if (userAnswer.toUpperCase()===answer.toUpperCase()){
     console.log('Right Answer.');
     score = score+1;
   }
@@ -86,7 +86,7 @@ for(i=0;i<highScores.length;i++){
 }
 console.log('------------------------');
 
-//check wheather user ghas beaten high score
+//check wheather user has beaten high score
 for (i=0;i<highScores.length;i++){
   currentHighScorer=highScores[i];
 
