@@ -3,7 +3,8 @@ var readlineSync = require('readline-sync');
 
 //variables
 var score=0;
-var highScores=[
+var highScores=
+[
   {
     name:'Rohit',
     score:'4'
@@ -26,15 +27,17 @@ console.log('------------------------');
 
 //Defining play function
 
-function play(question,answer){
-
+function play(question,answer)
+{
   var userAnswer=readlineSync.question(question);
 
-  if (userAnswer.toUpperCase()===answer.toUpperCase()){
+  if (userAnswer.toUpperCase()===answer.toUpperCase())
+  {
     console.log('Right Answer.');
     score = score+1;
   }
-  else{
+  else
+  {
     console.log('Wrong Answer.');
   }
   console.log('Current score is '+score);
@@ -42,7 +45,8 @@ function play(question,answer){
 }
 
 // question array
-var questions=[
+var questions=
+[
   {
     question: 'Where do I live? ',
     answer: 'Kolhapur'
@@ -63,13 +67,13 @@ var questions=[
     question: 'Am I older than 25? ',
     answer: 'Yes'
   }
-]
+];
 
 //calling play() function
 
-for (i=0; i<questions.length;i++){
+for (i=0; i<questions.length;i++)
+{
   currentQuestion=questions[i];
-
   play(currentQuestion.question,currentQuestion.answer);
 }
 
@@ -80,17 +84,20 @@ console.log('------------------------');
 
 //Display High scorers 
 console.log('High scorers')
-for(i=0;i<highScores.length;i++){
+for(i=0;i<highScores.length;i++)
+{
   currentHighScorer=highScores[i];
   console.log(currentHighScorer.name+':'+currentHighScorer.score);
 }
 console.log('------------------------');
 
 //check wheather user has beaten high score
-for (i=0;i<highScores.length;i++){
+for (i=0;i<highScores.length;i++)
+{
   currentHighScorer=highScores[i];
 
-  if(score>currentHighScorer.score){
+  if(score>currentHighScorer.score)
+  {
     console.log('Congratualations!, You have beaten '+currentHighScorer.name);
     console.log('Please send me screenshot of this to add your name to High Scorers');
     break;
